@@ -48,16 +48,16 @@ public class ArrayT<T> {
         }
         size--;
         data[size] = null;
-        if (size == data.length / 2) resize(data.length / 2);
+        if (size == data.length / 4 && data.length / 2 != 0) resize(data.length / 2);
         return ret;
     }
 
-    public void removeFirst() {
-        remove(0);
+    public T removeFirst() {
+        return remove(0);
     }
 
-    public void removeLast() {
-        remove(size - 1);
+    public T removeLast() {
+        return remove(size - 1);
     }
 
     public void removeElement(T e) {
@@ -93,6 +93,14 @@ public class ArrayT<T> {
         if (index < 0 || index > size)
             throw new IllegalArgumentException("Add Failed,Require index >= 0 and index <= size .");
         return data[index];
+    }
+
+    public T getFirst() {
+        return getIndex(0);
+    }
+
+    public T getLast() {
+        return getIndex(size - 1);
     }
 
     public void setData(int index, T e) {
