@@ -1,4 +1,4 @@
-package com.xp.java.array;
+package com.xp.java.datastructures.array;
 
 /**
  * @类描述：数组实现(支持泛型)(扩展为动态数组)

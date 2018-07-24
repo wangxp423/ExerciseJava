@@ -1,4 +1,4 @@
-package com.xp.java.array;
+package com.xp.java.datastructures.array;
 
 /**
  * @类描述：

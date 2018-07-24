@@ -1,4 +1,4 @@
-package com.xp.java.stack_queues.queues;
+package com.xp.java.datastructures.stack_queues.queues;
 
 /**
  * @类描述：基于数组的循环队列

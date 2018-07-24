@@ -1,4 +1,4 @@
-package com.xp.java.stack_queues.stack;
+package com.xp.java.datastructures.stack_queues.stack;
 
 /**
  * @类描述：应用常量类

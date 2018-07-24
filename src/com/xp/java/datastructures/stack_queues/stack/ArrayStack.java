@@ -1,23 +1,23 @@
-package com.xp.java.stack_queues.queues;
+package com.xp.java.datastructures.stack_queues.stack;
 
-import com.xp.java.array.ArrayT;
+import com.xp.java.datastructures.array.ArrayT;
 
 /**
- * @类描述：基于数组实现的队列
+ * @类描述：数组栈
  * @创建人：Wangxiaopan
- * @创建时间：2018/7/20 0020 14:44
+ * @创建时间：2018/7/19 0019 18:30
  * @修改人：
- * @修改时间：2018/7/20 0020 14:44
+ * @修改时间：2018/7/19 0019 18:30
  * @修改备注：
  */
-public class ArrayQueue<T> implements Queue<T> {
+public class ArrayStack<T> implements Stack<T> {
     private ArrayT<T> array;
 
-    public ArrayQueue(int capacity) {
+    public ArrayStack(int capacity) {
         array = new ArrayT<>(capacity);
     }
 
-    public ArrayQueue() {
+    public ArrayStack() {
         array = new ArrayT<>();
     }
 
@@ -32,31 +32,35 @@ public class ArrayQueue<T> implements Queue<T> {
     }
 
     @Override
-    public void enqueue(T e) {
+    public void push(T e) {
         array.addLast(e);
     }
 
     @Override
-    public T dequeue() {
-        return array.removeFirst();
+    public T pop() {
+        return array.removeLast();
     }
 
     @Override
-    public T getFront() {
-        return array.getFirst();
+    public T peek() {
+        return array.getLast();
+    }
+
+    public int getCapacity() {
+        return array.getCapacity();
     }
 
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
-        res.append("Queue: ");
-        res.append("front [");
+        res.append("Stack: ");
+        res.append('[');
         for (int i = 0; i < array.getSize(); i++) {
             res.append(array.getIndex(i));
             if (i != array.getSize() - 1)
                 res.append(", ");
         }
-        res.append("] tail");
+        res.append("] top");
         return res.toString();
     }
 }

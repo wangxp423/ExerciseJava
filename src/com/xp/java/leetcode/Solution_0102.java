@@ -1,22 +1,19 @@
-package com.xp.java.stack_queues.queues;
+package com.xp.java.leetcode;
 
 import javafx.util.Pair;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/// Leetcode 102. Binary Tree Level Order Traversal
-/// https://leetcode.com/problems/binary-tree-level-order-traversal/description/
-/// 二叉树的层序遍历
-///
-/// 二叉树的层序遍历是一个典型的可以借助队列解决的问题。
-/// 该代码主要用于使用Leetcode上的问题测试我们的ArrayQueue。
-/// 对于二叉树的层序遍历，这个课程后续会讲到。
-/// 届时，同学们也可以再回头看这个代码。
-/// 不过到时，大家应该已经学会自己编写二叉树的层序遍历啦：）
-
-class Solution {
-
+/**
+ * @类描述：leetcode第102题，是一个队列遍历二叉树的。
+ * @创建人：Wangxiaopan
+ * @创建时间：2018/7/20 0020 16:15
+ * @修改人：
+ * @修改时间：2018/7/20 0020 16:15
+ * @修改备注：
+ */
+public class Solution_0102 {
     /// Definition for a binary tree node.
     private class TreeNode {
         int val;
@@ -28,14 +25,14 @@ class Solution {
         }
     }
 
-    private class Array<E> {
+    private class Array<T> {
 
-        private E[] data;
+        private T[] data;
         private int size;
 
         // 构造函数，传入数组的容量capacity构造Array
         public Array(int capacity) {
-            data = (E[]) new Object[capacity];
+            data = (T[]) new Object[capacity];
             size = 0;
         }
 
@@ -60,7 +57,7 @@ class Solution {
         }
 
         // 在index索引的位置插入一个新元素e
-        public void add(int index, E e) {
+        public void add(int index, T e) {
 
             if (index < 0 || index > size)
                 throw new IllegalArgumentException("Add failed. Require index >= 0 and index <= size.");
@@ -77,39 +74,39 @@ class Solution {
         }
 
         // 向所有元素后添加一个新元素
-        public void addLast(E e) {
+        public void addLast(T e) {
             add(size, e);
         }
 
         // 在所有元素前添加一个新元素
-        public void addFirst(E e) {
+        public void addFirst(T e) {
             add(0, e);
         }
 
         // 获取index索引位置的元素
-        public E get(int index) {
+        public T get(int index) {
             if (index < 0 || index >= size)
                 throw new IllegalArgumentException("Get failed. Index is illegal.");
             return data[index];
         }
 
-        public E getLast() {
+        public T getLast() {
             return get(size - 1);
         }
 
-        public E getFirst() {
+        public T getFirst() {
             return get(0);
         }
 
         // 修改index索引位置的元素为e
-        public void set(int index, E e) {
+        public void set(int index, T e) {
             if (index < 0 || index >= size)
                 throw new IllegalArgumentException("Set failed. Index is illegal.");
             data[index] = e;
         }
 
         // 查找数组中是否有元素e
-        public boolean contains(E e) {
+        public boolean contains(T e) {
             for (int i = 0; i < size; i++) {
                 if (data[i].equals(e))
                     return true;
@@ -118,7 +115,7 @@ class Solution {
         }
 
         // 查找数组中元素e所在的索引，如果不存在元素e，则返回-1
-        public int find(E e) {
+        public int find(T e) {
             for (int i = 0; i < size; i++) {
                 if (data[i].equals(e))
                     return i;
@@ -127,11 +124,11 @@ class Solution {
         }
 
         // 从数组中删除index位置的元素, 返回删除的元素
-        public E remove(int index) {
+        public T remove(int index) {
             if (index < 0 || index >= size)
                 throw new IllegalArgumentException("Remove failed. Index is illegal.");
 
-            E ret = data[index];
+            T ret = data[index];
             for (int i = index + 1; i < size; i++)
                 data[i - 1] = data[i];
             size--;
@@ -143,17 +140,17 @@ class Solution {
         }
 
         // 从数组中删除第一个元素, 返回删除的元素
-        public E removeFirst() {
+        public T removeFirst() {
             return remove(0);
         }
 
         // 从数组中删除最后一个元素, 返回删除的元素
-        public E removeLast() {
+        public T removeLast() {
             return remove(size - 1);
         }
 
         // 从数组中删除元素e
-        public void removeElement(E e) {
+        public void removeElement(T e) {
             int index = find(e);
             if (index != -1)
                 remove(index);
@@ -177,7 +174,7 @@ class Solution {
         // 将数组空间的容量变成newCapacity大小
         private void resize(int newCapacity) {
 
-            E[] newData = (E[]) new Object[newCapacity];
+            T[] newData = (T[]) new Object[newCapacity];
             for (int i = 0; i < size; i++)
                 newData[i] = data[i];
             data = newData;
@@ -254,32 +251,28 @@ class Solution {
     }
 
     public List<List<Integer>> levelOrder(TreeNode root) {
+        ArrayList<List<Integer>> res = new ArrayList<>();
+        if (null == root) return res;
 
-        ArrayList<List<Integer>> res = new ArrayList<List<Integer>>();
-        if (root == null)
-            return res;
-
-        // 我们使用LinkedList来做为我们的先入先出的队列
-        ArrayQueue<Pair<TreeNode, Integer>> queue = new ArrayQueue<Pair<TreeNode, Integer>>();
+        ArrayQueue<Pair<TreeNode, Integer>> queue = new ArrayQueue<>();
         queue.enqueue(new Pair<TreeNode, Integer>(root, 0));
-
         while (!queue.isEmpty()) {
-
             Pair<TreeNode, Integer> front = queue.dequeue();
             TreeNode node = front.getKey();
             int level = front.getValue();
-
-            if (level == res.size())
+            if (level == res.size()) {
                 res.add(new ArrayList<Integer>());
+            }
             assert level < res.size();
 
             res.get(level).add(node.val);
-            if (node.left != null)
+            if (node.left != null) {
                 queue.enqueue(new Pair<TreeNode, Integer>(node.left, level + 1));
-            if (node.right != null)
+            }
+            if (node.right != null) {
                 queue.enqueue(new Pair<TreeNode, Integer>(node.right, level + 1));
+            }
         }
-
         return res;
     }
 }
