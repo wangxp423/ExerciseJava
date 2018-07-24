@@ -1,7 +1,7 @@
 # ExerciseJava
 Java Exercise
-数据结构和算法相关的一些练习
-后期会将一些LeetCode上面的练习题加上。
+数据结构和算法相关的一些练习<br>
+[LeetCode](https://leetcode-cn.com)上面的练习题。
 
 感谢：刘宇波(liuyubobobo)<https://github.com/liuyubobobo> 的开源项目和PDF文档
 
