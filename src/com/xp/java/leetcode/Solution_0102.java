@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @类描述：leetcode第102题，是一个队列遍历二叉树的。
+ * @类描述：leetcode第102题，是一个队列遍历二叉树的。 二叉树的层序遍历 基于队列
  * @创建人：Wangxiaopan
  * @创建时间：2018/7/20 0020 16:15
  * @修改人：
