@@ -5,12 +5,12 @@
 感谢：刘宇波(liuyubobobo)<https://github.com/liuyubobobo> 的开源项目和PDF文档
 
 ## 以下是包名简介
->datastructures　->　　数据结构相关<br>
->>array　->　　数组<br>
->>stack_queues.stack　->　　栈<br>
->>stack_queues.queue　->　　队列<br>
->>linked　->　　链表<br>
->>recursion　->　　递归<br>
->>binary_search_tree　->　　二分搜索树<br>
+>datastructures　->　数据结构相关<br>
+>>array　->　数组<br>
+>>stack_queues.stack　->　栈<br>
+>>stack_queues.queue　->　队列<br>
+>>linked　->　链表<br>
+>>recursion　->　递归<br>
+>>binary_search_tree　->　二分搜索树<br>
 
-sort　->　　各种排序算法<br>
+sort　->　各种排序算法<br>
