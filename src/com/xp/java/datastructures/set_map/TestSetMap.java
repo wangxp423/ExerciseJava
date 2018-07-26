@@ -1,5 +1,6 @@
 package com.xp.java.datastructures.set_map;
 
+import com.xp.java.datastructures.set_map.map.LinkedListMap;
 import com.xp.java.datastructures.set_map.set.BSTSet;
 import com.xp.java.datastructures.set_map.set.LinkedListSet;
 import com.xp.java.datastructures.set_map.set.Set;
@@ -16,9 +17,10 @@ import java.util.ArrayList;
  */
 public class TestSetMap {
     public static void main(String[] args) {
-//        testBSTSet();
+        testBSTSet();
 //        testLinkedListSet();
-        testSetTime();
+//        testSetTime();
+        testLinkedListMap();
     }
 
     private static void testBSTSet() {
@@ -118,5 +120,29 @@ public class TestSetMap {
         LinkedListSet<String> linkedListSet = new LinkedListSet<>();
         double time2 = testSet(linkedListSet, filename);
         System.out.println("Linked List Set: " + time2 + " s");
+    }
+
+    private static void testLinkedListMap() {
+        System.out.println("Pride and Prejudice");
+
+        ArrayList<String> words = new ArrayList<>();
+        if (FileOperation.readFile("C:\\forwork\\MyGithub\\ExerciseJava\\src\\com\\xp\\java\\datastructures\\set_map\\doc\\pride-and-prejudice.txt", words)) {
+            System.out.println("Total words: " + words.size());
+
+            LinkedListMap<String, Integer> map = new LinkedListMap<>();
+            for (String word : words) {
+                if (map.contains(word))
+                    map.set(word, map.get(word) + 1);
+                else
+                    map.add(word, 1);
+            }
+
+            System.out.println("Total different words: " + map.getSize());
+            System.out.println("Frequency of PRIDE: " + map.get("pride"));
+            System.out.println("Frequency of PREJUDICE: " + map.get("prejudice"));
+        }
+
+        System.out.println();
+
     }
 }
