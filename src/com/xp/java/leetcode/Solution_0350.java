@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * @类描述：Leetcode 350 两个数组的交集
+ * @类描述：Leetcode 350 两个数组的交集2
  * @创建人：Wangxiaopan
  * @创建时间：2018/7/26 0026 15:42
  * @修改人：

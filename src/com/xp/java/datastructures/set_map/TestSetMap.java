@@ -1,6 +1,8 @@
 package com.xp.java.datastructures.set_map;
 
+import com.xp.java.datastructures.set_map.map.BSTreeMap;
 import com.xp.java.datastructures.set_map.map.LinkedListMap;
+import com.xp.java.datastructures.set_map.map.Map;
 import com.xp.java.datastructures.set_map.set.BSTSet;
 import com.xp.java.datastructures.set_map.set.LinkedListSet;
 import com.xp.java.datastructures.set_map.set.Set;
@@ -17,10 +19,12 @@ import java.util.ArrayList;
  */
 public class TestSetMap {
     public static void main(String[] args) {
-        testBSTSet();
+//        testBSTSet();
 //        testLinkedListSet();
-//        testSetTime();
-        testLinkedListMap();
+        testSetTime();
+//        testLinkedListMap();
+//        testBSTreeMap();
+        testMapTime();
     }
 
     private static void testBSTSet() {
@@ -144,5 +148,69 @@ public class TestSetMap {
 
         System.out.println();
 
+    }
+
+    private static void testBSTreeMap() {
+        System.out.println("Pride and Prejudice");
+
+        ArrayList<String> words = new ArrayList<>();
+        if (FileOperation.readFile("C:\\forwork\\MyGithub\\ExerciseJava\\src\\com\\xp\\java\\datastructures\\set_map\\doc\\pride-and-prejudice.txt", words)) {
+            System.out.println("Total words: " + words.size());
+
+            BSTreeMap<String, Integer> map = new BSTreeMap<>();
+            for (String word : words) {
+                if (map.contains(word))
+                    map.set(word, map.get(word) + 1);
+                else
+                    map.add(word, 1);
+            }
+
+            System.out.println("Total different words: " + map.getSize());
+            System.out.println("Frequency of PRIDE: " + map.get("pride"));
+            System.out.println("Frequency of PREJUDICE: " + map.get("prejudice"));
+        }
+
+        System.out.println();
+
+    }
+
+    private static double testMap(Map<String, Integer> map, String filename) {
+
+        long startTime = System.nanoTime();
+
+        System.out.println(filename);
+        ArrayList<String> words = new ArrayList<>();
+        if (FileOperation.readFile(filename, words)) {
+            System.out.println("Total words: " + words.size());
+
+            for (String word : words) {
+                if (map.contains(word))
+                    map.set(word, map.get(word) + 1);
+                else
+                    map.add(word, 1);
+            }
+
+            System.out.println("Total different words: " + map.getSize());
+            System.out.println("Frequency of PRIDE: " + map.get("pride"));
+            System.out.println("Frequency of PREJUDICE: " + map.get("prejudice"));
+        }
+
+        long endTime = System.nanoTime();
+
+        return (endTime - startTime) / 1000000000.0;
+    }
+
+    private static void testMapTime() {
+        String filename = "C:\\forwork\\MyGithub\\ExerciseJava\\src\\com\\xp\\java\\datastructures\\set_map\\doc\\pride-and-prejudice.txt";
+
+        BSTreeMap<String, Integer> bstMap = new BSTreeMap<>();
+        double time1 = testMap(bstMap, filename);
+        System.out.println("BST Map: " + time1 + " s");
+
+        System.out.println();
+
+        LinkedListMap<String, Integer> linkedListMap = new LinkedListMap<>();
+        double time2 = testMap(linkedListMap, filename);
+        System.out.println("Linked List Map: " + time2 + " s");
     }
 }
