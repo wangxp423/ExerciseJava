@@ -14,5 +14,7 @@
 >>binary_search_tree　->　二分搜索树<br>
 >>set_map.set　->　set集合<br>
 >>set_map.map　->　map映射<br>
+>>heap　->　堆<br>
 
+leetcode　->　[Leetcode练习题](https://leetcode-cn.com)<br>
 sort　->　各种排序算法<br>

@@ -23,6 +23,13 @@ public class ArrayT<T> {
         this(10);
     }
 
+    public ArrayT(T[] arr) {
+        data = (T[]) new Object[arr.length];
+        for (int i = 0; i < arr.length; i++)
+            data[i] = arr[i];
+        size = arr.length;
+    }
+
     //容量
     public int getCapacity() {
         return data.length;
@@ -129,6 +136,16 @@ public class ArrayT<T> {
             array[i] = data[i];
         }
         data = array;
+    }
+
+    public void swap(int i, int j) {
+        if (i < 0 || i >= size || j < 0 || j >= size) {
+            throw new IllegalArgumentException("Index is illegal.");
+        }
+        T temp = data[i];
+        data[i] = data[j];
+        data[j] = temp;
+
     }
 
     @Override
