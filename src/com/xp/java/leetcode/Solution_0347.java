@@ -4,6 +4,7 @@ import java.util.*;
 
 /**
  * @类描述：Leetcode 347 前k个高频元素
+ * 这个题 在包heap 下的两个Solution还有不同的解法，大致思路是一样的
  * @创建人：Wangxiaopan
  * @创建时间：2018/7/26 0026 15:42
  * @修改人：
