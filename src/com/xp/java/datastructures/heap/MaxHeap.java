@@ -3,7 +3,7 @@ package com.xp.java.datastructures.heap;
 import com.xp.java.datastructures.array.ArrayT;
 
 /**
- * @类描述：最大堆(根据二叉堆的特点，满二叉，我们可以根据父节点推出子节点位置，反之亦然)
+ * @类描述：最大堆(根据二叉堆的特点，完全二叉，我们可以根据父节点推出子节点位置，反之亦然)
  * @创建人：Wangxiaopan
  * @创建时间：2018/7/30 0030 10:13
  * @修改人：

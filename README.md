@@ -4,7 +4,7 @@
 
 感谢：刘宇波(liuyubobobo)<https://github.com/liuyubobobo> 的开源项目和PDF文档
 
-## 以下是包名简介
+## 以下是包名简介　每个包下的doc下的PDF文件为详细介绍
 >datastructures　->　数据结构相关<br>
 >>array　->　数组<br>
 >>stack_queues.stack　->　栈<br>
@@ -15,6 +15,7 @@
 >>set_map.set　->　set集合<br>
 >>set_map.map　->　map映射<br>
 >>heap　->　堆<br>
+>>segment_tree　->　线段树<br>
 
 leetcode　->　[Leetcode练习题](https://leetcode-cn.com)<br>
 sort　->　各种排序算法<br>
