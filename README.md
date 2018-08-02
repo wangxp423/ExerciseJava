@@ -16,6 +16,7 @@
 >>set_map.map　->　map映射<br>
 >>heap　->　堆<br>
 >>segment_tree　->　线段树<br>
+>>trie　->　字典树(前缀树)<br>
 
 leetcode　->　[Leetcode练习题](https://leetcode-cn.com)<br>
 sort　->　各种排序算法<br>
