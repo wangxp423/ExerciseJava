@@ -43,16 +43,31 @@ public class TestUnionFind {
 //        int m = 10000;
 
         // UnionFind2 慢于 UnionFind1, 但UnionFind3最快
-        int size = 100000;
-        int m = 100000;
+        int size = 10000000;
+        int m = 10000000;
 
-        UnionFind1 uf1 = new UnionFind1(size);
-        System.out.println("UnionFind1 : " + testUF(uf1, m) + " s");
+        //基于数组 如果合并 直接将id改为相同，但是需要遍历数组
+//        UnionFind1 uf1 = new UnionFind1(size);
+//        System.out.println("UnionFind1 : " + testUF(uf1, m) + " s");
 
-        UnionFind2 uf2 = new UnionFind2(size);
-        System.out.println("UnionFind2 : " + testUF(uf2, m) + " s");
+        //基于数组 如果合并 将合并去过的id指向合并数的id。
+//        UnionFind2 uf2 = new UnionFind2(size);
+//        System.out.println("UnionFind2 : " + testUF(uf2, m) + " s");
 
+        //基于数组 如果合并 我们将比较根节点所在的树节点的size大小，小的往大的上面合并
         UnionFind3 uf3 = new UnionFind3(size);
         System.out.println("UnionFind3 : " + testUF(uf3, m) + " s");
+
+        //基于数组 如果合并 我们将比较根节点所在的树的深度rank大小，小的往大的上面合并，以保证深度。因为树的查找最终是深度h决定的。
+        UnionFind4 uf4 = new UnionFind4(size);
+        System.out.println("UnionFind4 : " + testUF(uf4, m) + " s");
+
+        //基于数组 如果合并 我们将比较根节点所在的树的深度rank大小，同时查找的时候我们通过压缩路径来查找
+        UnionFind5 uf5 = new UnionFind5(size);
+        System.out.println("UnionFind5 : " + testUF(uf5, m) + " s");
+
+        //基于数组 如果合并 我们将比较根节点所在的树的深度rank大小，同时查找的时候我们通过压缩路径来查找
+        UnionFind6 uf6 = new UnionFind6(size);
+        System.out.println("UnionFind6 : " + testUF(uf6, m) + " s");
     }
 }
