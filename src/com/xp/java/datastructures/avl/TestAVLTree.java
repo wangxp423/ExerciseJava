@@ -1,6 +1,7 @@
 package com.xp.java.datastructures.avl;
 
 import com.xp.java.datastructures.set_map.FileOperation;
+import com.xp.java.datastructures.set_map.TestSetMap;
 
 import java.util.ArrayList;
 
@@ -14,7 +15,9 @@ import java.util.ArrayList;
  */
 public class TestAVLTree {
     public static void main(String[] args) {
-        testWords();
+//        testWords();
+        testSetTime();
+        testMapTime();
     }
 
     private static void testWords() {
@@ -38,9 +41,23 @@ public class TestAVLTree {
 
             System.out.println("is BST : " + tree.isBST());
             System.out.println("is Balanced : " + tree.isBalance());
+
+            System.out.println();
+
+            for (String word : words) {
+                tree.remove(word);
+                if (!tree.isBST() || !tree.isBalance())
+                    throw new RuntimeException();
+            }
         }
+    }
 
-        System.out.println();
+    private static void testSetTime() {
+        TestSetMap.testSetTime();
+    }
 
+    private static void testMapTime() {
+        //我们发现 bst二分搜索树  和  avl树 时间差不多。是因为单词量太少，高度差不是很明显，如果多进行几次循环就看出时间差别了。
+        TestSetMap.testMapTime();
     }
 }

@@ -4,6 +4,8 @@
 
 感谢：刘宇波(liuyubobobo)<https://github.com/liuyubobobo> 的开源项目和PDF文档
 
+个人博客<https://blog.csdn.net/wangxp423>
+
 ## 以下是包名简介　每个包下的doc下的PDF文件为详细介绍
 >datastructures　->　数据结构相关<br>
 >>array　->　数组<br>
@@ -19,6 +21,7 @@
 >>trie　->　字典树(前缀树)<br>
 >>union_find　->　并查集<br>
 >>avl　->　AVL平衡树<br>
+
 
 leetcode　->　[Leetcode练习题](https://leetcode-cn.com)<br>
 sort　->　各种排序算法<br>

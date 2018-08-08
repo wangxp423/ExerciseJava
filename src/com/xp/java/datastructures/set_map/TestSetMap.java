@@ -1,5 +1,7 @@
 package com.xp.java.datastructures.set_map;
 
+import com.xp.java.datastructures.avl.AVLMap;
+import com.xp.java.datastructures.avl.AVLSet;
 import com.xp.java.datastructures.set_map.map.BSTreeMap;
 import com.xp.java.datastructures.set_map.map.LinkedListMap;
 import com.xp.java.datastructures.set_map.map.Map;
@@ -109,7 +111,7 @@ public class TestSetMap {
         return (endTime - startTime) / 1000000000.0;
     }
 
-    private static void testSetTime() {
+    public static void testSetTime() {
         //我们会发现树的时间明显比链表时间短
         //链表的时间复杂度为链表长度 n  即为O(n)
         //树的时间复杂度为树的深度h  其中 2的h次幂+1 = n  h=log2(n-1) 所以时间复杂度为O(logn)
@@ -118,12 +120,17 @@ public class TestSetMap {
         BSTSet<String> bstSet = new BSTSet<>();
         double time1 = testSet(bstSet, filename);
         System.out.println("BST Set: " + time1 + " s");
-
         System.out.println();
 
         LinkedListSet<String> linkedListSet = new LinkedListSet<>();
         double time2 = testSet(linkedListSet, filename);
         System.out.println("Linked List Set: " + time2 + " s");
+        System.out.println();
+
+        AVLSet<String> avlSet = new AVLSet<>();
+        double time3 = testSet(avlSet, filename);
+        System.out.println("AVL Set: " + time3 + " s");
+        System.out.println();
     }
 
     private static void testLinkedListMap() {
@@ -200,17 +207,22 @@ public class TestSetMap {
         return (endTime - startTime) / 1000000000.0;
     }
 
-    private static void testMapTime() {
+    public static void testMapTime() {
         String filename = "C:\\forwork\\MyGithub\\ExerciseJava\\src\\com\\xp\\java\\datastructures\\set_map\\doc\\pride-and-prejudice.txt";
 
         BSTreeMap<String, Integer> bstMap = new BSTreeMap<>();
         double time1 = testMap(bstMap, filename);
         System.out.println("BST Map: " + time1 + " s");
-
         System.out.println();
 
         LinkedListMap<String, Integer> linkedListMap = new LinkedListMap<>();
         double time2 = testMap(linkedListMap, filename);
         System.out.println("Linked List Map: " + time2 + " s");
+        System.out.println();
+
+        AVLMap<String, Integer> avlMap = new AVLMap<>();
+        double time3 = testMap(avlMap, filename);
+        System.out.println("AVL Map: " + time3 + " s");
+        System.out.println();
     }
 }
