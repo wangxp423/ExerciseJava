@@ -1,4 +1,4 @@
-package com.xp.java.datastructures.black_red_tree;
+package com.xp.java.datastructures.red_black_tree;
 
 /**
  * @类描述：红黑树 满足二分搜索树的性质 同时又有很多其他特性，为了更好理解，推荐先关注 2-3树

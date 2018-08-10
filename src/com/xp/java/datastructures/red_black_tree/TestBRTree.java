@@ -1,4 +1,4 @@
-package com.xp.java.datastructures.black_red_tree;
+package com.xp.java.datastructures.red_black_tree;
 
 import com.xp.java.datastructures.avl.AVLTree;
 import com.xp.java.datastructures.set_map.FileOperation;
