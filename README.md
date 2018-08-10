@@ -4,7 +4,7 @@
 
 感谢：刘宇波(liuyubobobo)<https://github.com/liuyubobobo> 的开源项目和PDF文档
 
-个人博客<https://blog.csdn.net/wangxp423>
+个人博客:<https://blog.csdn.net/wangxp423>
 
 ## 以下是包名简介　每个包下的doc下的PDF文件为详细介绍
 >datastructures　->　数据结构相关<br>

@@ -224,5 +224,6 @@ public class TestSetMap {
         double time3 = testMap(avlMap, filename);
         System.out.println("AVL Map: " + time3 + " s");
         System.out.println();
+
     }
 }
