@@ -1,4 +1,4 @@
-package com.xp.java.leetcode;
+package com.xp.java.util;
 
 /**
  * @类描述：打印工具类
@@ -9,8 +9,9 @@ package com.xp.java.leetcode;
  * @修改备注：
  */
 public class PrintUtil {
-    public static void printArray(int[] array) {
+    public static void printArray(String name, int[] array) {
         StringBuilder builder = new StringBuilder();
+        builder.append(name);
         builder.append("[");
         for (int i = 0; i < array.length; i++) {
             builder.append(array[i]);

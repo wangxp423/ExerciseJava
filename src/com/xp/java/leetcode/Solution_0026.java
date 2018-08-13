@@ -1,5 +1,7 @@
 package com.xp.java.leetcode;
 
+import com.xp.java.util.PrintUtil;
+
 /**
  * @类描述：Leetcode 26题  删除排序数组中的重复项
  * @创建人：Wangxiaopan
@@ -24,6 +26,6 @@ public class Solution_0026 {
     public static void main(String[] args) {
         int[] nums = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
         System.out.println("length = " + removeDuplicates(nums));
-        PrintUtil.printArray(nums);
+        PrintUtil.printArray("打印输出：", nums);
     }
 }

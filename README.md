@@ -24,6 +24,8 @@
 >>red_black_tree　->　红黑树<br>
 >>hashtable　->　哈希表<br>
 
+>algorithms　->　基本算法相关<br>
+>>sort　->　排序<br>
+
 
 leetcode　->　[Leetcode练习题](https://leetcode-cn.com)<br>
-sort　->　各种排序算法<br>
