@@ -8,7 +8,7 @@
 
 ## 以下是包名简介　每个包下的doc下的PDF文件为详细介绍
 ### 数据结构相关
->datastructures　->　<br>
+>datastructures
 >>array　->　数组<br>
 >>stack_queues.stack　->　栈<br>
 >>stack_queues.queue　->　队列<br>
@@ -26,7 +26,7 @@
 >>hashtable　->　哈希表<br>
 
 ### 基本算法相关
->algorithms　->　<br>
+>algorithms
 >>sort　->　排序<br>
 
 
