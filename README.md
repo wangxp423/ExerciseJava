@@ -7,7 +7,8 @@
 个人博客:<https://blog.csdn.net/wangxp423>
 
 ## 以下是包名简介　每个包下的doc下的PDF文件为详细介绍
->datastructures　->　数据结构相关<br>
+### 数据结构相关
+>datastructures　->　<br>
 >>array　->　数组<br>
 >>stack_queues.stack　->　栈<br>
 >>stack_queues.queue　->　队列<br>
@@ -24,7 +25,8 @@
 >>red_black_tree　->　红黑树<br>
 >>hashtable　->　哈希表<br>
 
->algorithms　->　基本算法相关<br>
+### 基本算法相关
+>algorithms　->　<br>
 >>sort　->　排序<br>
 
 
