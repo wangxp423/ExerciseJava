@@ -14,10 +14,10 @@ import java.util.Random;
  */
 public class TestBSTree {
     public static void main(String[] args) {
-        preOrder();
+//        preOrder();
 //        preOrderNR();
 //        inOrder();
-//        postOrder();
+        postOrder();
 //        levelOrder();
 //        getMiniAndMax();
 //        removeMini();

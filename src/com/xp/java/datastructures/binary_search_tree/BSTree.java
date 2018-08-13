@@ -12,7 +12,7 @@ import com.xp.java.datastructures.stack_queues.stack.ArrayStack;
  * @修改备注：
  */
 public class BSTree<T extends Comparable<T>> {
-    private class Node {
+    public class Node {
         public T e;
         public Node left, right;
 
@@ -25,6 +25,10 @@ public class BSTree<T extends Comparable<T>> {
 
     private Node root;
     private int size;
+
+    public Node getRoot() {
+        return root;
+    }
 
     public int getSize() {
         return size;

@@ -21,7 +21,8 @@
 >>trie　->　字典树(前缀树)<br>
 >>union_find　->　并查集<br>
 >>avl　->　AVL平衡树<br>
->>red_black_tree　->　AVL平衡树<br>
+>>red_black_tree　->　红黑树<br>
+>>hashtable　->　哈希表<br>
 
 
 leetcode　->　[Leetcode练习题](https://leetcode-cn.com)<br>

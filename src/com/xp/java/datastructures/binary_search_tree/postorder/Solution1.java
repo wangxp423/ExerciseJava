@@ -25,7 +25,6 @@ public class Solution1 {
         }
     }
 
-    ;
 
     public List<Integer> postorderTraversal(TreeNode root) {
 
