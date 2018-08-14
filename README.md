@@ -6,7 +6,7 @@
 
 个人博客:<https://blog.csdn.net/wangxp423>
 
-## 以下是包名简介　每个包下的doc下的PDF文件为详细介绍
+## 以下是包名简介　包下的doc目录为文档介绍
 ### 数据结构相关
 >datastructures
 >>array　->　数组<br>
