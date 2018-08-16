@@ -13,9 +13,11 @@ import com.xp.java.util.SortTestHelper;
 public class TestSort {
     public static void main(String[] args) {
 //        testSelectSort();
-        testInsertSort();
-        testShellSort();
+//        testInsertSort();
+//        testShellSort();
 //        testBubbleSort();
+        testMergeSort();
+        testQuickSort();
 
     }
 
@@ -74,5 +76,22 @@ public class TestSort {
         Integer[] arr = SortTestHelper.generateNearlyOrderedArray(N, 20);
         SortTestHelper.testSort("com.xp.java.algorithms.sort.BubbleSort", arr);
 //        SortTestHelper.printArray(arr);
+    }
+
+
+    //归并排序
+    private static void testMergeSort() {
+        int N = 20000;
+        Integer[] arr = SortTestHelper.generateRandomArray(N, 0, 100000);
+        SortTestHelper.testSort("com.xp.java.algorithms.sort.MergeSort", arr);
+        SortTestHelper.printArray(arr);
+    }
+
+    //归并排序
+    private static void testQuickSort() {
+        int N = 20000;
+        Integer[] arr = SortTestHelper.generateRandomArray(N, 0, 100000);
+        SortTestHelper.testSort("com.xp.java.algorithms.sort.QuickSort", arr);
+        SortTestHelper.printArray(arr);
     }
 }
