@@ -28,6 +28,7 @@
 ### 基本算法相关
 >algorithms
 >>sort　->　排序<br>
-
+>>heap　->　堆排序<br>
+>>other　->　其他算法相关<br>
 
 leetcode　->　[Leetcode练习题](https://leetcode-cn.com)<br>

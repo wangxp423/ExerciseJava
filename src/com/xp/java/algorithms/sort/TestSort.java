@@ -87,7 +87,7 @@ public class TestSort {
         SortTestHelper.printArray(arr);
     }
 
-    //归并排序
+    //快速排序
     private static void testQuickSort() {
         int N = 20000;
         Integer[] arr = SortTestHelper.generateRandomArray(N, 0, 100000);

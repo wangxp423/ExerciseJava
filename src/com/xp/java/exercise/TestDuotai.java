@@ -1,4 +1,4 @@
-package com.xp.java.part1;
+package com.xp.java.exercise;
 
 /**
  * 多态
