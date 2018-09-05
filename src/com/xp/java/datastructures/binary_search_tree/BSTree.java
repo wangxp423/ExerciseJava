@@ -300,7 +300,7 @@ public class BSTree<T extends Comparable<T>> {
     private String generateDepthString(int depth) {
         StringBuilder res = new StringBuilder();
         for (int i = 0; i < depth; i++)
-            res.append("--");
+            res.append("- ");
         return res.toString();
     }
 }

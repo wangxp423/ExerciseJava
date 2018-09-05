@@ -24,13 +24,13 @@ public class BSTreeInorder {
         for (int num : nums)
             bst.add(num);
 
-        preOrder1(bst.getRoot());
+        inOrder1(bst.getRoot());
 
     }
 
 
     //中序遍历
-    private static void preOrder1(BSTree.Node root) {
+    private static void inOrder1(BSTree.Node root) {
         /////////////////
         //      5      //
         //    /   \    //
