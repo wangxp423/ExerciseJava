@@ -1,5 +1,7 @@
 package com.xp.java.util;
 
+import com.xp.java.leetcode.ListNode;
+
 /**
  * @类描述：打印工具类
  * @创建人：Wangxiaopan
@@ -21,6 +23,16 @@ public class TestUtil {
         }
         builder.append("]");
         System.out.println(builder.toString());
+    }
+
+    //打印 链表节点
+    public static void printListNode(ListNode node) {
+        StringBuilder res = new StringBuilder();
+        for (ListNode cur = node; cur != null; cur = cur.next) {
+            res.append(cur.val + "->");
+        }
+        res.append("NULL");
+        System.out.println(res.toString());
     }
 
     private static void swap(int[] arr, int i, int j) {
