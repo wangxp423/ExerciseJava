@@ -31,6 +31,7 @@ public class Solution_0053 {
         return max;
     }
 
+    //通过前几个数的和与最新要加入的数进行比较，如果最新数大于和。说明最大值肯定是在最新数后面开始的。
     public static int maxSubArray1(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;

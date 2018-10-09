@@ -23,9 +23,22 @@ public class Solution_0026 {
         return count + 1;
     }
 
+    public static int removeDuplicates1(int[] nums) {
+        int count = 0;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[count] != nums[i]) {
+                nums[++count] = nums[i];
+            }
+        }
+        return count + 1;
+    }
+
     public static void main(String[] args) {
         int[] nums = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
         System.out.println("length = " + removeDuplicates(nums));
         TestUtil.printArray("打印输出：", nums);
+        int[] nums1 = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
+        System.out.println("length = " + removeDuplicates1(nums1));
+        TestUtil.printArray("打印输出1：", nums1);
     }
 }

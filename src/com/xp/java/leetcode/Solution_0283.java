@@ -31,9 +31,27 @@ public class Solution_0283 {
         }
     }
 
+    //通过交换非0和0的位置
+    public static void moveZeroes1(int[] nums) {
+        int size = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                if (size == i) {
+                    size++;
+                } else {
+                    int temp = nums[i];
+                    nums[i] = nums[size];
+                    nums[size] = temp;
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
         int[] array = {0, 1, 0, 3, 12};
         moveZeroes(array);
-        TestUtil.printArray("LeetCode283,", array);
+        TestUtil.printArray("moveZeroes = ", array);
+        moveZeroes1(array);
+        TestUtil.printArray("moveZeroes1 = ", array);
     }
 }
