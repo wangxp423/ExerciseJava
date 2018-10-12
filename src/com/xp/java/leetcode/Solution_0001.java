@@ -11,6 +11,10 @@ import java.util.HashMap;
  * @修改备注：
  */
 public class Solution_0001 {
+
+    //1尝试用暴力解法O(n²)复杂度写一个
+    //2尝试用先排序后指针碰撞的解法O(nlogn)复杂度写一个
+    //3这是一个O(n)时间复杂度的解法
     public int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap();
         for (int i = 0; i < nums.length; i++) {
