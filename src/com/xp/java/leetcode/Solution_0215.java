@@ -18,57 +18,59 @@ public class Solution_0215 {
     //根据快速排序的思路，如果我们将标志位指定为k，根据标志位来进行快排，不一定需要快排所有数据。
     public static int findKthLargest1(int[] nums, int k) {
         int index = nums.length - k;
+        int start = 0, end = nums.length - 1;
         while (true) {
-            int mark = quickSortOne(nums, 0, nums.length - 1, index);
+            int mark = quickSortOne(nums, start, end);
             if (mark == index) return nums[index];
-            if (mark < index) quickSortOne(nums, mark + 1, nums.length - 1, index);
-            if (mark > index) quickSortOne(nums, 0, mark - 1, index);
+            if (mark < index) start = mark + 1;
+            if (mark > index) end = mark - 1;
         }
     }
 
+    //最坏情况其实也是进行了一次快排
     //一次快排，返回标志位
     //k为第几大的数值，那么他在数组中的位置index = nums.lenggh-k
-    //我们以index为标志位，进行快速排序，每一次返回当前index标志位在数组中的真实位置
-    //然后将index和真实位置进行比较，然后再次进行区间快排。直到标志位在他改在的位置。
-    private static int quickSortOne(int[] nums, int start, int end, int mark) {
+    //返回标志位如果小于index。那么说明这个index在标志位和end区间然后再次进行快排。以此类推
+    public static int quickSortOne(int[] nums, int start, int end) {
         int left = start;
         int right = end;
+        int mark = nums[start];
         while (left < right) {
-            while (left < right && nums[right] > nums[mark]) {
+            while (left < right && nums[right] > mark) {
                 right--;
             }
-            while (left < right && nums[left] <= nums[mark]) {
+            while (left < right && nums[left] <= mark) {
                 left++;
             }
             int temp = nums[left];
             nums[left] = nums[right];
             nums[right] = temp;
         }
-        int temp = nums[mark];
-        nums[mark] = nums[right];
-        nums[right] = temp;
-        return right;
+        int temp = nums[start];
+        nums[start] = nums[left];
+        nums[left] = temp;
+        return left;
     }
 
     //标准快排
-    private static void quickSort(int[] nums, int start, int end) {
+    public static void quickSort(int[] nums, int start, int end) {
         if (start > end) return;
         int left = start;
         int right = end;
-        int mark = start;
+        int mark = nums[start]; //选择一个数 作为标志位
         while (left < right) {
-            while (left < right && nums[right] > nums[mark]) {
+            while (left < right && nums[right] > mark) {
                 right--;
             }
-            while (left < right && nums[left] <= nums[mark]) {
+            while (left < right && nums[left] <= mark) {
                 left++;
             }
             int temp = nums[right];
             nums[right] = nums[left];
             nums[left] = temp;
         }
-        int temp = nums[mark];
-        nums[mark] = nums[right];
+        int temp = nums[start];
+        nums[start] = nums[right];
         nums[right] = temp;
         quickSort(nums, start, left - 1);
         quickSort(nums, left + 1, end);
@@ -78,9 +80,16 @@ public class Solution_0215 {
         int[] nums = {3, 2, 1, 5, 6, 4};
         int[] nums1 = {3, 2, 3, 1, 2, 4, 5, 5, 6};
         int[] nums2 = {3, 6, 7, 4, 2, 8, 9, 1};
+        int[] nums3 = {-1, -1};
+        int[] nums4 = {5, 2, 4, 1, 3, 6, 0};
 //        quickSort(nums2, 0, nums2.length - 1);
-//        TestUtil.printArray("快速排序 = ", nums2);
+//        quickSort(nums4, 0, nums4.length - 1);
+//        TestUtil.printArray("快速排序 = ", nums4);
 //        System.out.println("k = " + findKthLargest(nums,2));
+        System.out.println("k = " + findKthLargest1(nums, 2));
+        System.out.println("k = " + findKthLargest1(nums1, 4));
         System.out.println("k = " + findKthLargest1(nums2, 3));
+        System.out.println("k = " + findKthLargest1(nums3, 2));
+        System.out.println("k = " + findKthLargest1(nums4, 4));
     }
 }
