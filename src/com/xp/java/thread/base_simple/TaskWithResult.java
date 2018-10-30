@@ -1,4 +1,4 @@
-package com.xp.java.thread;
+package com.xp.java.thread.base_simple;
 
 import java.util.concurrent.Callable;
 

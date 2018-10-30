@@ -1,27 +1,25 @@
-package com.xp.java.thread;
+package com.xp.java.thread.base_simple;
 
 import java.util.concurrent.TimeUnit;
 
 /**
  * @类描述：应用常量类
  * @创建人：Wangxiaopan
- * @创建时间：2018/10/29 0029 18:10
+ * @创建时间：2018/10/30 0030 10:06
  * @修改人：
- * @修改时间：2018/10/29 0029 18:10
+ * @修改时间：2018/10/30 0030 10:06
  * @修改备注：
  */
-public class SleepingTask extends LiftOff {
+public class SimpleDaemons implements Runnable {
+
     @Override
     public void run() {
-        while (countDown-- > 0) {
-            System.out.print(status());
-            if (countDown == 0) {
-                System.out.println();
-            }
+        while (true) {
             try {
-//                Thread.sleep(100);
                 TimeUnit.MILLISECONDS.sleep(100);
+                System.out.println(Thread.currentThread() + " " + this);
             } catch (InterruptedException e) {
+                System.out.print("sleep() interrupted");
                 e.printStackTrace();
             }
         }

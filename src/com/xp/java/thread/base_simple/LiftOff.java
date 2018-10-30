@@ -1,4 +1,4 @@
-package com.xp.java.thread;
+package com.xp.java.thread.base_simple;
 
 /**
  * @类描述：应用常量类
