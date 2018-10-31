@@ -31,4 +31,8 @@
 >>heap　->　堆排序<br>
 >>other　->　其他算法相关<br>
 
+thread　->　线程相关
+
 leetcode　->　[Leetcode练习题](https://leetcode-cn.com)<br>
+
+
