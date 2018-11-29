@@ -6,7 +6,7 @@
 
 > 个人博客:<https://blog.csdn.net/wangxp423><br>
 > 欢迎关注个人微信公众账号账号：<br>
-![Image](https://github.com/wangxp423/ExerciseJava/raw/master/screenshot/qrcode.jpg)
+![Image](https://github.com/wangxp423/ExerciseJava/raw/master/screenshot/qrcode.jpg)<br>
 > QQ交流群：721146199
 
 ## 以下是包名简介　包下的doc目录为文档介绍
