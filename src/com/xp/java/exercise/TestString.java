@@ -11,6 +11,10 @@ package com.xp.java.exercise;
 public class TestString {
 
     public static void main(String[] args) {
+        testString();
+    }
+
+    public static void testString() {
         String a = "HelloWord";
         String b = "Hello" + new String("Word");
         String c = "HelloWord";
