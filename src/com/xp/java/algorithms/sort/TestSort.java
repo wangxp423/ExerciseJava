@@ -16,10 +16,12 @@ public class TestSort {
 //        testInsertSort();
 //        testShellSort();
 //        testBubbleSort();
-        testMergeSort();
-        testQuickSort();
+//        testMergeSort();
+//        testQuickSort();
+
 
     }
+
 
     //选择排序
     private static void testSelectSort() {
