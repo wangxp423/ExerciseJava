@@ -14,8 +14,9 @@ public class TextMain {
     }
 
     public static void binaryToDecimal1(int n) {
-        for (int i = 31; i >= 0; i--)
-            System.out.print(n >>> i & 1);
+        for (int i = 31; i >= 0; i--) {
+            System.out.println(n >>> i & 1);
+        }
     }
 
     public static int get1CountDigui(int n) {
@@ -134,13 +135,13 @@ public class TextMain {
     public static void main(String[] args) {
 //        binaryToDecimal(17);
 //        binaryToDecimal1(10);
-//        binaryToDecimal2(9);
-//        get1Count(11);
+        get1Count(11);
 //        System.out.println("totalCount = " + get1CountDigui(17));
         int[] array = {1, 2, 3, 4, 5, -5};
 //        System.out.println("maxSum = " + maxSubSum(array));
 //        System.out.println("converNum = " + recoverNum(156798));
 //        findModGotOnly0101(7);
 //        findModGotOnly1111(7);
+
     }
 }

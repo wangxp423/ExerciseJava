@@ -24,8 +24,16 @@ public class BSTreePreorder {
         for (int num : nums)
             bst.add(num);
 
-        preOrder1(bst.getRoot());
+//        preOrder1(bst.getRoot());
 //        preOrder2(bst.getRoot());
+        preOrder3(bst.getRoot());
+    }
+
+    private static void preOrder3(BSTree.Node root) {
+        if (null == root) return;
+        System.out.println(root.e);
+        preOrder3(root.left);
+        preOrder3(root.right);
     }
 
     //前序遍历

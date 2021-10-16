@@ -75,11 +75,69 @@ public class TestTherad {
         }
     }
 
+    public static class PrintSynOneRunnable implements Runnable {
+        private TestTherad testTheradOne;
+        private TestTherad testTheradTwo;
+
+        PrintSynOneRunnable(TestTherad theradOne, TestTherad threadTwo) {
+            this.testTheradOne = theradOne;
+            this.testTheradTwo = threadTwo;
+        }
+
+        @Override
+        public void run() {
+            while (true) {
+                synchronized (testTheradOne) {
+                    System.out.print("1");
+                    try {
+                        testTheradOne.wait();
+                        testTheradTwo.notify();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+    }
+
+    public static class PrintSynTwoRunnable implements Runnable {
+        private TestTherad testTheradOne;
+        private TestTherad testTheradTwo;
+
+        PrintSynTwoRunnable(TestTherad theradOne, TestTherad threadTwo) {
+            this.testTheradOne = theradOne;
+            this.testTheradTwo = threadTwo;
+        }
+
+        @Override
+        public void run() {
+            try {
+                Thread.sleep(3);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            while (true) {
+                synchronized (testTheradTwo) {
+                    System.out.print("2");
+                    try {
+                        testTheradTwo.wait();
+                        testTheradOne.notify();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) throws InterruptedException {
         TestTherad thread = new TestTherad();
+        TestTherad threadTwo = new TestTherad();
         ExecutorService exec = Executors.newCachedThreadPool();
-        exec.execute(new PrintOneRunnable(thread));
-        exec.execute(new PrintTwoRunnable(thread));
+//        exec.execute(new PrintOneRunnable(thread));
+//        exec.execute(new PrintTwoRunnable(thread));
+        exec.execute(new PrintSynOneRunnable(thread, threadTwo));
+        exec.execute(new PrintSynTwoRunnable(thread, threadTwo));
         TimeUnit.MILLISECONDS.sleep(5);
         exec.shutdownNow();
     }

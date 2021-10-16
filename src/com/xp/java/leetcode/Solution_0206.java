@@ -19,6 +19,7 @@ public class Solution_0206 {
         }
     }
 
+    //就地反转
     public ListNode reverseList(ListNode head) {
         if (null == head) return null;
         if (dummyHead == null) {
@@ -33,14 +34,38 @@ public class Solution_0206 {
             dummyHead.next = pcur;
             pcur = prev.next;
         }
+        System.out.println(printNode(dummyHead.next));
         return dummyHead.next;
     }
+
+    //使用一个头节点在反转
+    public ListNode reverseList2(ListNode head) {
+        if (null == head) {
+            return null;
+        }
+        if (dummyHead == null) {
+            dummyHead = new ListNode(-1);
+        }
+        ListNode revert = null;
+        while (null != head) {
+            ListNode temp = head.next;
+            head.next = revert;
+            revert = head;
+            head = temp;
+        }
+        System.out.println(printNode(revert));
+        return revert;
+    }
+
+    ;
 
     public static void main(String[] args) {
         Solution_0206 solution = new Solution_0206();
         solution.setData();
 //        solution.reverseLinkedNode();
-        solution.reverseLinkedNode2();
+//        solution.reverseLinkedNode2();
+        solution.reverseList(solution.dummyHead.next);
+//        solution.reverseList2(solution.dummyHead.next);
     }
 
     //因为我这里已经有虚拟头节点了。我就不需要在进行增加虚拟头节点的操作了。
