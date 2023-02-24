@@ -14,8 +14,11 @@ import java.util.Arrays;
  */
 public class MergeSort {
     public static void main(String[] args) {
-        mergeArray();
+//        mergeArray();
         testMergeArray();
+//        Integer[] array = new Integer[]{14,12,15,13,11,16};
+//        sort(array);
+//        SortTestHelper.printArray(array);
     }
 
     public static void sort(Comparable[] array) {

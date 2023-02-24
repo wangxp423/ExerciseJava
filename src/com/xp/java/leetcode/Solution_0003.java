@@ -12,7 +12,7 @@ import java.util.Map;
  * @修改备注：
  */
 public class Solution_0003 {
-    public int lengthOfLongestSubstring(String s) {
+    public static int longestSubstringLength(String s) {
         int n = s.length(), ans = 0, i = 0;
         Map<Character, Integer> map = new HashMap<>();
         for (int j = 0; j < n; j++) {
@@ -26,8 +26,27 @@ public class Solution_0003 {
         return ans;
     }
 
+    public static String longestSubString(String s) {
+        int length = s.length();
+        int start = 0;
+        int max = 0;
+        Map<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < length; i++) {
+            Character c = s.charAt(i);
+            if (map.containsKey(c)) {
+                start = Math.max(start, map.get(c));
+            }
+            max = Math.max(max, i - start + 1);
+            map.put(c, i + 1); //+1是因为，如果重复，改值为下一个起点的位置
+        }
+        return s.substring(start, start + max);
+    }
+
+
     public static void main(String[] args) {
         String s = "abccabcd";
-        System.out.println(new Solution_0003().lengthOfLongestSubstring(s));
+        System.out.println(longestSubstringLength(s));
+        System.out.println(longestSubString(s));
+        Map<Character, Integer> map = new HashMap<>(3);
     }
 }

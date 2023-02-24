@@ -47,7 +47,16 @@ public class TextMain {
         return count;
     }
 
-    public static int maxSubSum(int[] array){
+    public static void get1CountWei(int n) {
+        int count = 0;
+        while (n > 0) {
+            n = n & (n - 1);
+            count++;
+        }
+        System.out.println("countW = " + count);
+    }
+
+    public static int maxSubSum(int[] array) {
         int maxSum = 0;
         for (int i = 0; i < array.length; i++) {
             int thisSum = 0;
@@ -135,7 +144,9 @@ public class TextMain {
     public static void main(String[] args) {
 //        binaryToDecimal(17);
 //        binaryToDecimal1(10);
-        get1Count(11);
+        get1CountDigui(8);
+        get1Count(8);
+        get1CountWei(8);
 //        System.out.println("totalCount = " + get1CountDigui(17));
         int[] array = {1, 2, 3, 4, 5, -5};
 //        System.out.println("maxSum = " + maxSubSum(array));

@@ -22,7 +22,20 @@ public class Solution_0007 {
         return rev;
     }
 
+    public static int reverseNum(int num) {
+        int rev = 0;
+        while (num != 0) {
+            int temp = num % 10;
+            num = num / 10;
+            if (rev > Integer.MAX_VALUE / 10 || (rev == Integer.MAX_VALUE / 10 && temp > 7)) return -1;
+            if (rev < Integer.MIN_VALUE / 10 || (rev == Integer.MIN_VALUE / 10 && temp < -8)) return -1;
+            rev = rev * 10 + temp;
+        }
+        return rev;
+    }
+
     public static void main(String[] args) {
         System.out.println("翻转 = " + reverse(234));
+        System.out.println("反转 = " + reverseNum(234));
     }
 }
