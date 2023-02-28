@@ -16,13 +16,15 @@ public class ShellSort {
         int[] array = {80, 30, 60, 40, 20, 10, 50, 70};
         shellSort(array, array.length);
         TestUtil.printArray("希尔排序：", array);
-        shellSort1(array);
+//        shellSort1(array);
+//        TestUtil.printArray("希尔排序：", array);
+//        shellSort2(array, array.length);
+//        TestUtil.printArray("希尔排序：", array);
+//        Double[] arr = {7.8, 9.9, 10.0, 6.6, 5.4, 3.4};
+//        sort(arr);
+//        SortTestHelper.printArray(arr);
+        shellSort3(array);
         TestUtil.printArray("希尔排序：", array);
-        shellSort2(array, array.length);
-        TestUtil.printArray("希尔排序：", array);
-        Double[] arr = {7.8, 9.9, 10.0, 6.6, 5.4, 3.4};
-        sort(arr);
-        SortTestHelper.printArray(arr);
     }
 
     public static void sort(Comparable[] array) {
@@ -95,6 +97,27 @@ public class ShellSort {
                             swap(a, k, k + gap);
                             k = k - gap;
                         }
+                    }
+                }
+            }
+        }
+    }
+
+    public static void shellSort3(int[] arrays) {
+        int length = arrays.length;
+        for (int gap = length / 2; gap > 0; gap = gap / 2) {
+            for (int i = 0; i < gap; i++) {
+                for (int j = gap + i; j < length; j++) {
+                    if (arrays[j] < arrays[j - gap]) {
+                        int temp = arrays[j];
+                        int k = j - gap;
+                        while (k >= 0 && arrays[k] > temp) {
+                            int sum = arrays[k + gap];
+                            arrays[k + gap] = arrays[k];
+                            arrays[k] = sum;
+                            k = k - gap;
+                        }
+//                        arrays[k + gap] = temp;
                     }
                 }
             }

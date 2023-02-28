@@ -22,20 +22,26 @@ public class Solution_0007 {
         return rev;
     }
 
-    public static int reverseNum(int num) {
-        int rev = 0;
-        while (num != 0) {
-            int temp = num % 10;
-            num = num / 10;
-            if (rev > Integer.MAX_VALUE / 10 || (rev == Integer.MAX_VALUE / 10 && temp > 7)) return -1;
-            if (rev < Integer.MIN_VALUE / 10 || (rev == Integer.MIN_VALUE / 10 && temp < -8)) return -1;
-            rev = rev * 10 + temp;
+    //打印区间回文数
+    public static void printReverseNum() {
+        StringBuilder builder = new StringBuilder();
+        for (int i = 10; i < 1000; i++) {
+            String num = String.valueOf(i);
+            int left = 0;
+            int right = num.length() - 1;
+            while (left < right && (num.charAt(left) == num.charAt(right))) {
+                left++;
+                right--;
+                if (left >= right) {
+                    builder.append(num).append(",");
+                }
+            }
         }
-        return rev;
+        System.out.println("区间回文数 = " + builder.toString());
     }
 
     public static void main(String[] args) {
-        System.out.println("翻转 = " + reverse(234));
-        System.out.println("反转 = " + reverseNum(234));
+        System.out.println("反转 = " + reverse(234));
+        printReverseNum();
     }
 }

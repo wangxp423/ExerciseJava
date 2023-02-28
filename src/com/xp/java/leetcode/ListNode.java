@@ -21,11 +21,11 @@ public class ListNode {
     public ListNode addNode(ListNode node) {
         if (dummyHead == null) {
             dummyHead = new ListNode(-1);
+            dummyHead.next = this;
         }
         if (node == null) return dummyHead.next;
-        ListNode temp = dummyHead.next;
+        node.next = dummyHead.next;
         dummyHead.next = node;
-        node.next = temp;
         return dummyHead.next;
     }
 
@@ -41,13 +41,15 @@ public class ListNode {
         return dummyHead.next;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder res = new StringBuilder();
-        for (ListNode cur = dummyHead.next; cur != null; cur = cur.next) {
-            res.append(cur.val + "->");
-        }
-        res.append("NULL");
-        return res.toString();
+    public static ListNode normalListNode() {
+        ListNode node = new ListNode(1)
+                .addNode(new ListNode(2))
+                .addNode(new ListNode(3));
+        return node;
+    }
+
+    public static ListNode array2ListNode(int[] nums) {
+        ListNode node = new ListNode(1);
+        return node.getListNode(nums);
     }
 }

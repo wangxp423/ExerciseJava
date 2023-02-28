@@ -108,27 +108,27 @@ public class Solution_0088 {
     //    nums2 = [3, 4]
     //    则中位数是 (2 + 3)/2 = 2.5
     private static double mergeArrayMiddelNum() {
-        int[] arr1 = {1, 4, 5, 0};
-        int[] arr2 = {2, 6, 7, 8};
-        int totalLength = arr1.length + arr2.length;
+        int[] nums1 = {1, 4, 5, 0};
+        int[] nums2 = {2, 6, 7, 8};
+        int totalLength = nums1.length + nums2.length;
         int[] merge = new int[totalLength];
         int leftIndex = 0, rightIndex = 0, temp = 0, mergeIndex = 0;
         while (mergeIndex <= totalLength / 2) {
-            if (leftIndex < arr1.length && rightIndex < arr2.length) {
-                if (arr1[leftIndex] < arr2[rightIndex]) {
-                    temp = arr1[leftIndex];
+            if (leftIndex < nums1.length && rightIndex < nums2.length) {
+                if (nums1[leftIndex] < nums2[rightIndex]) {
+                    temp = nums1[leftIndex];
                     leftIndex++;
                 } else {
-                    temp = arr2[rightIndex];
+                    temp = nums2[rightIndex];
                     rightIndex++;
                 }
                 merge[mergeIndex] = temp;
                 mergeIndex++;
-            } else if (leftIndex >= arr1.length) {
-                merge[mergeIndex] = arr2[rightIndex++];
+            } else if (leftIndex >= nums1.length) {
+                merge[mergeIndex] = nums2[rightIndex++];
                 mergeIndex++;
             } else {
-                merge[mergeIndex] = arr1[leftIndex++];
+                merge[mergeIndex] = nums1[leftIndex++];
                 mergeIndex++;
             }
         }
