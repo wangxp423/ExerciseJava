@@ -3,7 +3,7 @@ package com.xp.java.leetcode;
 import java.util.TreeSet;
 
 /**
- * @类描述：leetcode 804题
+ * @类描述：leetcode804
  * @创建人：Wangxiaopan
  * @创建时间：2018/7/25 0025 10:26
  * @修改人：

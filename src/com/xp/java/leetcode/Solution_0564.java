@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 寻找最近的回文数
+ * leetcode564 寻找最近的回文数
  */
 public class Solution_0564 {
     public static String nearestPalindromic(String n) {

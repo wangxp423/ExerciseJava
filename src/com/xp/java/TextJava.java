@@ -7,15 +7,6 @@ import java.util.Arrays;
 
 //一些基础题
 public class TextJava {
-    //字符串考察
-    public static void testConcat() {
-        String product = "Pen";
-        product.toLowerCase();
-        product.concat(" BOX".toLowerCase());
-        System.out.println(product);
-        System.out.println(product.substring(4, 6));
-    }
-
     /*****************位运算*****************/
     public static void rightOne2Zero(int x) {
         int y = 0;
@@ -273,12 +264,14 @@ public class TextJava {
 //        revertStrings(0,arrays.length-1,arrays);
 //        System.out.println(testSearch(17));
 //        System.out.println(testSearchCircle(0,array.length-1,17));
-//        int[] array = new int[]{6,4,3,7,9,10,2,14,17};
+        int[] array = new int[]{6, 4, 3, 7, 9, 10, 2, 14, 17};
 //        testQuickSort(array,0,array.length-1);
-//        TestUtil.printArray("快速排序：",array);
+        TestUtil.printArray("快速排序：", array);
 //        mergeArray();
 //        mergeArrayInsert();
 //        testMergeArray();
+//        System.out.println(weiSum());
+//        System.out.println(fun("Smart"));
     }
 
 }

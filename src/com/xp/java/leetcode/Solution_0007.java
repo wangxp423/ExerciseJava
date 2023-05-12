@@ -1,7 +1,7 @@
 package com.xp.java.leetcode;
 
 /**
- * @类描述：LeetCode 7题 翻转数字
+ * @类描述：LeetCode7 翻转数字
  * @创建人：Wangxiaopan
  * @创建时间：2018/8/24 0024 17:10
  * @修改人：

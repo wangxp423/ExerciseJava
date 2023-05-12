@@ -36,6 +36,10 @@ public class TestClassLoader {
     }
 
     static class Son extends Father {
+        static {
+            System.out.println("static Son.before");
+        }
+
         public static Son instance = new Son();
 
         static {
@@ -61,6 +65,9 @@ public class TestClassLoader {
         }
     }
 
+    //父类静态代码块 =》 子类静态代码块 =》 父类代码块 =》 父类构造方法 =》 子类代码块 =》 子类构造方法
+    //如果存在多个静态域 按照前后顺序执行
+    //静态域只执行一次，代码块每次new都执行
     public static void main(String[] args) {
         System.out.println("1.---------------------");
         System.out.println(Son.TAG);

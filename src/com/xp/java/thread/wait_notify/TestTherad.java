@@ -112,7 +112,7 @@ public class TestTherad {
         @Override
         public void run() {
             try {
-                Thread.sleep(3);
+                Thread.sleep(1);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -134,10 +134,10 @@ public class TestTherad {
         TestTherad thread = new TestTherad();
         TestTherad threadTwo = new TestTherad();
         ExecutorService exec = Executors.newCachedThreadPool();
-//        exec.execute(new PrintOneRunnable(thread));
-//        exec.execute(new PrintTwoRunnable(thread));
-        exec.execute(new PrintSynOneRunnable(thread, threadTwo));
-        exec.execute(new PrintSynTwoRunnable(thread, threadTwo));
+        exec.execute(new PrintOneRunnable(thread));
+        exec.execute(new PrintTwoRunnable(thread));
+//        exec.execute(new PrintSynOneRunnable(thread, threadTwo));
+//        exec.execute(new PrintSynTwoRunnable(thread, threadTwo));
         TimeUnit.MILLISECONDS.sleep(5);
         exec.shutdownNow();
     }
