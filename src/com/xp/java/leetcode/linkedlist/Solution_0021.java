@@ -1,6 +1,7 @@
 package com.xp.java.leetcode.linkedlist;
 
 import com.xp.java.leetcode.ListNode;
+import com.xp.java.util.TestUtil;
 
 /**
  * @类描述：leetcode21 合并两个有序链表
@@ -11,6 +12,16 @@ import com.xp.java.leetcode.ListNode;
  * @修改备注：
  */
 public class Solution_0021 {
+
+    public static void main(String[] args) {
+        ListNode node1 = getListNode1();
+        ListNode node2 = getListNode2();
+        TestUtil.printListNode(node1);
+        TestUtil.printListNode(node2);
+//        TestUtil.printListNode(mergeTwoLists1(node1, node2));
+        TestUtil.printListNode(mergeTwoLists2(node1, node2));
+//        TestUtil.printListNode(mergeTwoLists(node1, node2));
+    }
 
     //这种方法是我自己想的。提交LeetCode也能通过。就是不太好
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
@@ -33,12 +44,6 @@ public class Solution_0021 {
         return null == dummyHead ? null : dummyHead.next;
     }
 
-    public static void main(String[] args) {
-        ListNode node1 = getListNode1();
-        ListNode node2 = getListNode2();
-        mergeTwoLists(null, null);
-    }
-
     public static ListNode dummyHead;
 
     public static void addNode(ListNode node) {
@@ -59,18 +64,18 @@ public class Solution_0021 {
 
     public static ListNode getListNode1() {
         ListNode head = new ListNode(-1);
-        int[] nums = {4, 2, 1};
+        int[] nums = {5, 3, 1};
         return head.getListNode(nums);
     }
 
     public static ListNode getListNode2() {
         ListNode head = new ListNode(-1);
-        int[] nums = {4, 3, 1};
+        int[] nums = {6, 4, 2};
         return head.getListNode(nums);
     }
 
-    //方法1
-    public ListNode mergeTwoLists1(ListNode l1, ListNode l2) {
+    //方法1 递归实现
+    public static ListNode mergeTwoLists1(ListNode l1, ListNode l2) {
         if (l1 == null)
             return l2;
         if (l2 == null)
@@ -87,14 +92,14 @@ public class Solution_0021 {
     }
 
     //方法2
-    public ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
+    public static ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
         if (l1 == null) {
             return l2;
         }
         if (l2 == null) {
             return l1;
         }
-        ListNode node = null;
+        ListNode node = null;//当前操作的head的位置
         ListNode head = null;
         while (l1 != null && l2 != null) {
             if (l1.val <= l2.val) {

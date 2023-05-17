@@ -19,6 +19,7 @@ public class Solution_0083 {
         }
     }
 
+    //删除元素 遍历
     public ListNode deleteDuplicates(ListNode head) {
         ListNode current = head;
         while (null != current && null != current.next) {
