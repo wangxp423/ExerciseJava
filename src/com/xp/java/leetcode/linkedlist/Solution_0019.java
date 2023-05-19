@@ -29,7 +29,7 @@ public class Solution_0019 {
     }
 
     public static void main(String[] args) {
-        int[] array = new int[]{5, 4, 3, 2, 1};
+        int[] array = new int[]{1, 2, 3, 4, 5};
         ListNode node = new ListNode(-1);
         node.getListNode(array);
         System.out.println(node);

@@ -46,7 +46,7 @@ public class Solution_0237 {
 
     public static void main(String[] args) {
         ListNode listNode = new ListNode(-1);
-        int[] list = new int[]{9, 1, 5, 4};
+        int[] list = new int[]{4, 5, 1, 9};
         ListNode node = listNode.getListNode(list);
         TestUtil.printListNode(node);
 

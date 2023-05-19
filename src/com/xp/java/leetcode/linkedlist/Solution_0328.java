@@ -111,9 +111,9 @@ public class Solution_0328 {
 
     public static ListNode getNode() {
         ListNode head = new ListNode(-1);
-        int[] nums = {6, 5, 4, 3, 2, 1};
-//        int[] nums = {1,2,3,4,5,6};
-//        int[] nums = {3,4,5,6,1,2};
+        int[] nums = {1, 2, 3, 4, 5, 6};
+//        int[] nums = {6,5,4,3,2,1};
+//        int[] nums = {2,1,6,5,4,3};
         return head.getListNode(nums);
     }
 }

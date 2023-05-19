@@ -64,13 +64,13 @@ public class Solution_0021 {
 
     public static ListNode getListNode1() {
         ListNode head = new ListNode(-1);
-        int[] nums = {5, 3, 1};
+        int[] nums = {1, 3, 5};
         return head.getListNode(nums);
     }
 
     public static ListNode getListNode2() {
         ListNode head = new ListNode(-1);
-        int[] nums = {6, 4, 2};
+        int[] nums = {2, 4, 6};
         return head.getListNode(nums);
     }
 

@@ -29,11 +29,23 @@ public class ListNode {
         return dummyHead.next;
     }
 
+//    public ListNode getListNode(int[] nums) {
+//        if (dummyHead == null) {
+//            dummyHead = new ListNode(-1);
+//        }
+//        for (int i = 0; i < nums.length; i++) {
+//            ListNode temp = new ListNode(nums[i]);
+//            temp.next = dummyHead.next;
+//            dummyHead.next = temp;
+//        }
+//        return dummyHead.next;
+//    }
+
     public ListNode getListNode(int[] nums) {
         if (dummyHead == null) {
             dummyHead = new ListNode(-1);
         }
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = nums.length - 1; i >= 0; i--) {
             ListNode temp = new ListNode(nums[i]);
             temp.next = dummyHead.next;
             dummyHead.next = temp;
