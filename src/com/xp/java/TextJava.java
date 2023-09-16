@@ -19,6 +19,7 @@ public class TextJava {
         int count = 0;
         while (x > 0) {
             x = x & (x - 1);
+            System.out.println("x = " + x);
             count++;
         }
         System.out.println(count);
@@ -252,8 +253,8 @@ public class TextJava {
 
     public static void main(String[] args) {
 //        testConcat();
-//        rightOne2Zero(1);
-//        sumOneCount(1);
+        rightOne2Zero(7);
+        sumOneCount(7);
 //        revertBit(10);
 //        testMaoPao();
 //        selectionSort();

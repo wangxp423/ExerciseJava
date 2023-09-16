@@ -134,11 +134,11 @@ public class TestTherad {
         TestTherad thread = new TestTherad();
         TestTherad threadTwo = new TestTherad();
         ExecutorService exec = Executors.newCachedThreadPool();
-        exec.execute(new PrintOneRunnable(thread));
-        exec.execute(new PrintTwoRunnable(thread));
-//        exec.execute(new PrintSynOneRunnable(thread, threadTwo));
-//        exec.execute(new PrintSynTwoRunnable(thread, threadTwo));
-        TimeUnit.MILLISECONDS.sleep(5);
+//        exec.execute(new PrintOneRunnable(thread));
+//        exec.execute(new PrintTwoRunnable(thread));
+        exec.execute(new PrintSynOneRunnable(thread, threadTwo));
+        exec.execute(new PrintSynTwoRunnable(thread, threadTwo));
+        TimeUnit.MILLISECONDS.sleep(15);
         exec.shutdownNow();
     }
 }

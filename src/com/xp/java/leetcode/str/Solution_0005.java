@@ -67,7 +67,8 @@ public class Solution_0005 {
     }
 
     public static void main(String[] args) {
-        System.out.println("最长回文串 = " + longestPalindrome("babad"));
+//        System.out.println("最长回文串 = " + longestPalindrome("babad"));
+        System.out.println("最长回文串 = " + longestPalindrome("babadab"));
 //        System.out.println("最长回文串 = " + longestPalindrome("cbbd"));
     }
 }
