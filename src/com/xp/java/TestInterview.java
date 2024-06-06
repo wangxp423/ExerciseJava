@@ -44,5 +44,7 @@ public class TestInterview {
     public static void main(String[] args) {
         TestInterview outer = new TestInterview();
         outer.amethod();
+//        testConcat();
+        System.out.println(weiSum());
     }
 }
