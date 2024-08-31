@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * @类描述：应用常量类
+ * @类描述：二分搜索树 前序遍历，中序遍历，后续遍历，层序遍历
  * @创建人：Wangxiaopan
  * @创建时间：2018/7/25 0025 10:51
  * @修改人：
@@ -38,10 +38,10 @@ public class TestBSTree {
         //  / \    \   //
         // 2  4     8  //
         /////////////////
-        bst.preOrder();
+//        bst.preOrder();
         System.out.println();
 
-//        System.out.println(bst);
+        System.out.println(bst);
     }
 
     private static void preOrderNR() {
@@ -96,9 +96,7 @@ public class TestBSTree {
         // 2  4     8  //
         /////////////////
         bst.postOrder();
-        System.out.println();
-
-//        System.out.println(bst);
+        System.out.println(bst);
     }
 
     private static void levelOrder() {

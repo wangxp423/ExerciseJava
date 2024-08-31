@@ -1,5 +1,8 @@
 package com.xp.java;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //一些java 面试题
 public class TestInterview {
     static class ValHold {
@@ -41,10 +44,30 @@ public class TestInterview {
         return s.length() < 0 ? (fun(s.substring(1) + s.charAt(0))) : "";
     }
 
+    //考察 集合删除
+    public static void listRemove() {
+        List<String> dataList = new ArrayList<>();
+        dataList.add("a");
+        dataList.add("b");
+        dataList.add("c");
+        dataList.add("d");
+        dataList.add("e");
+        for (int i = 0; i < dataList.size(); i++) {
+            String data = dataList.get(i);
+            System.out.print("i = " + i);
+            System.out.println(" data = " + data);
+            if ("c".equals(data) || "d".equals(data)) {
+                dataList.remove(data);
+            }
+        }
+        System.out.println("dataList = " + dataList);
+    }
+
     public static void main(String[] args) {
-        TestInterview outer = new TestInterview();
-        outer.amethod();
+//        TestInterview outer = new TestInterview();
+//        outer.amethod();
 //        testConcat();
-        System.out.println(weiSum());
+//        System.out.println(weiSum());
+        listRemove();
     }
 }
