@@ -77,8 +77,8 @@ public class Solution_0564 {
         int strLength = inputNum.length();
         int halfLength = (strLength + 1) / 2;
         List<Long> nums = new ArrayList<>();
-        nums.add((long) Math.pow(10, halfLength - 1) - 1);
-        nums.add((long) Math.pow(10, halfLength) + 1);
+        nums.add((long) Math.pow(10, strLength - 1) - 1);
+        nums.add((long) Math.pow(10, strLength) + 1);
         long leftNum = Long.parseLong(inputNum.substring(0, halfLength));
         for (long i = leftNum - 1; i <= leftNum + 1; i++) {
             StringBuffer left = new StringBuffer();
@@ -93,9 +93,9 @@ public class Solution_0564 {
 
     public static void main(String[] args) {
 //        printRecentlyReverseNum(12);
-//        System.out.println(nearestPalindromic("8"));
+//        System.out.println(nearestPalindromic("120"));
         System.out.println(printReverseNum("120"));
-        evenNum();
+//        evenNum();
     }
 
 }
